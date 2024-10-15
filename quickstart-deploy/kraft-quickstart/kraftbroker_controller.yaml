@@ -8,7 +8,7 @@ spec:
   image:
     application: docker.io/confluentinc/cp-server:7.7.0
     init: confluentinc/confluent-init-container:2.9.0
-  replicas: 3
+  replicas: 1
 ---
 apiVersion: platform.confluent.io/v1beta1
 kind: Kafka
@@ -20,7 +20,7 @@ spec:
   image:
     application: docker.io/confluentinc/cp-server:7.7.0
     init: confluentinc/confluent-init-container:2.9.0
-  replicas: 3
+  replicas: 1
   dependencies:
     kRaftController:
       clusterRef:
@@ -45,7 +45,7 @@ metadata:
 spec:
   kafkaRestClassRef:
     name: krc-cfk
-  replicas: 3
-  partitionCount: 4
+  replicas: 1
+  partitionCount: 1
   configs:
     cleanup.policy: "delete"

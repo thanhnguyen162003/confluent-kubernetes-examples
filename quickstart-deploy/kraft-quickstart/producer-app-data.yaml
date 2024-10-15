@@ -46,9 +46,9 @@ spec:
             memory: 512Mi # 768Mi
             cpu: 500m # 1000m
       volumes:
-        - name: kafka-properties # Create secret with name `kafka-client-config` with client configurations
-          secret:
-            secretName: kafka-client-config
+      - name: kafka-properties # Create secret with name `kafka-client-config` with client configurations
+        secret:
+          secretName: kafka-client-config
 ---
 apiVersion: v1
 kind: Service
@@ -63,7 +63,7 @@ metadata:
   name: elastic-0
   namespace: confluent
 spec:
-  replicas: 3
+  replicas: 1
   partitionCount: 1
   configs:
     cleanup.policy: "delete"
