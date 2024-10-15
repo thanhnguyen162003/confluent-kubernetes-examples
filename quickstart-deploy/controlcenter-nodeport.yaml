@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: controlcenter-nodeport
+  namespace: confluent
+spec:
+  type: NodePort
+  ports:
+  - port: 9021 # Internal port on which Control Center listens
+    nodePort: 32000 # External port for access (you can change this port if needed)
+    protocol: TCP
+  selector:
+    app: controlcenter # Ensure this matches the labels in your Control Center deployment
