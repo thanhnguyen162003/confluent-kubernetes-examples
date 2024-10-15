@@ -57,17 +57,6 @@ spec:
     connect:
     - name: connect
       url: http://connect.confluent.svc.cluster.local:8083
-  configuration:
-    internalTopicsReplication:
-      replicationFactor: 1
-    commandTopicReplication:
-      replicationFactor: 1
-    monitoringInterceptorTopicReplication:
-      replicationFactor: 1
-    heartbeatTopicReplication:
-      replicationFactor: 1
-    metricsTopicReplication:
-      replicationFactor: 1
 ---
 apiVersion: platform.confluent.io/v1beta1
 kind: SchemaRegistry
