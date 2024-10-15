@@ -8,7 +8,7 @@ spec:
   image:
     application: docker.io/confluentinc/cp-server:7.7.0
     init: confluentinc/confluent-init-container:2.9.0
-  replicas: 1
+  replicas: 3
 ---
 apiVersion: platform.confluent.io/v1beta1
 kind: Kafka
@@ -16,7 +16,7 @@ metadata:
   name: kafka
   namespace: confluent
 spec:
-  replicas: 1
+  replicas: 3
   image:
     application: confluentinc/cp-server:7.7.0
     init: confluentinc/confluent-init-container:2.9.0
@@ -64,7 +64,7 @@ metadata:
   name: schemaregistry
   namespace: confluent
 spec:
-  replicas: 1
+  replicas: 3
   image:
     application: confluentinc/cp-schema-registry:7.7.0
     init: confluentinc/confluent-init-container:2.9.0
